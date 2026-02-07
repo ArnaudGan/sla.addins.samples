@@ -10,8 +10,10 @@ namespace SLA.Addins.Samples.ParserAddin;
 /// </summary>
 public class JsonLogLineTranslator : ILineTranslator
 {
+    // Using non-greedy quantifier to match individual JSON objects
+    // Handles balanced braces to avoid matching across multiple JSON objects
     private static readonly Regex JsonPattern = new Regex(
-        @"\{.*\}",
+        @"\{(?:[^{}]|(?<open>\{)|(?<-open>\}))+(?(open)(?!))\}",
         RegexOptions.Compiled);
     
     public string Name => "JSON Line Formatter";
