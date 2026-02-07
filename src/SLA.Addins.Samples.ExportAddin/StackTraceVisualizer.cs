@@ -83,7 +83,7 @@ public class StackTraceVisualizer : IVisualizer
         }
         catch (Exception ex)
         {
-            return new TextBlock
+            return new TextBox
             {
                 Text = $"Failed to visualize stack trace: {ex.Message}",
                 Foreground = Brushes.Red,

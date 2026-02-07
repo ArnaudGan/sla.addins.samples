@@ -64,7 +64,7 @@ public class JsonVisualizer : IVisualizer
         catch (Exception ex)
         {
             // Return error message if parsing fails
-            return new TextBlock
+            return new TextBox
             {
                 Text = $"Failed to parse JSON: {ex.Message}",
                 Foreground = System.Windows.Media.Brushes.Red,

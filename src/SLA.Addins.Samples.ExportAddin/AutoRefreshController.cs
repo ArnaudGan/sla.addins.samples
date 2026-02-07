@@ -55,17 +55,12 @@ public class AutoRefreshController : ISlaController
         {
             // Get all open sources
             var openSources = _controlable.GetOpenSources().ToList();
-            
-            // Note: This approach closes and reopens sources which may cause
-            // UI flickering or loss of scroll position. This is a limitation
-            // of the IControlable interface which doesn't provide a direct
-            // Refresh method. In production, consider if this trade-off is
-            // acceptable for your use case.
+
+            // SLA will ignore already opened source files
             foreach (var source in openSources)
             {
                 Application.Current?.Dispatcher.Invoke(() =>
                 {
-                    _controlable.CloseSource(source);
                     _controlable.OpenSource(source);
                 });
             }
