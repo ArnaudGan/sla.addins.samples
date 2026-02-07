@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SLA.Addins.Samples.ExportAddin/SLA.Addins.Samples.ExportAddin.csproj" />
+    <Project Path="src/SLA.Addins.Samples.FilterAddin/SLA.Addins.Samples.FilterAddin.csproj" />
+    <Project Path="src/SLA.Addins.Samples.ParserAddin/SLA.Addins.Samples.ParserAddin.csproj" />
+  </Folder>
+</Solution>
